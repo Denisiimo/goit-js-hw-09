@@ -1,7 +1,7 @@
 const startRef = document.querySelector("[data-start]")
 const stopRef = document.querySelector("[data-stop]")
 stopRef.disabled = true
-let background = 0
+let background = null;
 
 startRef.addEventListener("click", onStart);
 stopRef.addEventListener("click", onStop);

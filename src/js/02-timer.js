@@ -10,6 +10,7 @@ const minutesRef = document.querySelector("[data-minutes]")
 const secondsRef = document.querySelector("[data-seconds]")
 onStartBtn.disabled = true
 let currentTime = null;
+let timeDiff = null;
 
 onStartBtn.addEventListener("click", startTimer)
 
