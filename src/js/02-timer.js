@@ -9,6 +9,7 @@ const hoursRef = document.querySelector("[data-hours]")
 const minutesRef = document.querySelector("[data-minutes]")
 const secondsRef = document.querySelector("[data-seconds]")
 onStartBtn.disabled = true
+let currentTime = null;
 
 onStartBtn.addEventListener("click", startTimer)
 
