@@ -6,15 +6,15 @@ formRef.addEventListener('submit', onSubmit)
 
 function onSubmit(action){
   action.preventDefault();
-  let delayRef =Number(document.querySelector('[name="delay"]').value);
-  let stepNum = Number(document.querySelector('[name="step"]').value);
-  let amountVal = Number(document.querySelector('[name="amount"]').value);
+  let delayRef =Number(action.currentTarget.elements.delay.value);
+  let stepNum = Number(action.currentTarget.elements.step.value);
+  let amountVal = Number(action.currentTarget.elements.amount.value);
   if (delayRef < 0 || stepNum < 0  || amountVal < 1) {
     Notiflix.Notify.failure('All values must be bigger than zero', {position: 'center-center'});
     return;
   }
   for (let position = 0; position < amountVal; position += 1) {
-    createPromise(position, delayRef)
+    createPromise(position + 1, delayRef)
     .then(({ position, delay }) => {
       Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`, {position: 'center-center'});
     })

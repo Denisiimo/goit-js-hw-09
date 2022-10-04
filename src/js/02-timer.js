@@ -15,6 +15,8 @@ let timeDiff = 0;
 onStartBtn.addEventListener("click", startTimer)
 
 function startTimer() {
+    onStartBtn.disabled = true
+    inputRef.disabled = true
     setInterval(() => {
         const startDate = new Date();
         timeDiff = currentTime - startDate;
@@ -23,7 +25,6 @@ function startTimer() {
             clearInterval()
             return;
         };
-        onStartBtn.disabled = true
         const { days, hours, minutes, seconds } = convertMs(timeDiff);
         daysRef.textContent = days;
         hoursRef.textContent = hours;
